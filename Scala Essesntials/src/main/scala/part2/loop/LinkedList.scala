@@ -153,6 +153,11 @@ trait MyPredicate[-T] {
       println(listOfIntegers.fold(0)(_+_))
       println(cloneListOfIntegers == listOfIntegers)
 
+      val forComprehension = for {
+        integers <- listOfIntegers
+      } yield integers
+      println("forComprehension: " + forComprehension)
+
       val listOfStrings: MyList[String] = Cons("a", Cons("b", Cons("c", Cons("d", Empty))))
       println(listOfStrings.head)
       println(listOfStrings.tail)
